@@ -1,0 +1,102 @@
+{
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "version": 2,
+    "final_space": true,
+    "blocks": [
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "segments": [
+                {
+                    "type": "battery",
+                    "style": "powerline",
+                    "foreground": "#FFFFFF",
+                    "template": "{{if not .Error}}[{{.Icon}}{{.Percentage}}%]{{if not .Icon}} {{end}}{{end}}",
+                    "properties": {
+                        "charging_icon": "\udb85\udc0b"
+                    }
+                },
+                {
+                    "type": "session",
+                    "style": "plain",
+                    "foreground": "#E36464",
+                    "template": "{{ .UserName }} "
+                },
+                {
+                    "type": "text",
+                    "style": "plain",
+                    "foreground": "#D4AAFC",
+                    "template": "@"
+                },
+                {
+                    "type": "path",
+                    "style": "plain",
+                    "foreground": "#56B6C2",
+                    "template": " {{ path .Path .Path }}",
+                    "properties": {
+                        "style": "agnoster_short",
+                        "max_depth": 2,
+                        "folder_separator_icon": "/",
+                        "mapped_locations": {
+                            "~/Documents/vscode": "[vscode]",
+                            "~/Documents/vscode/hsse": "[hsse]"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "type": "prompt",
+            "alignment": "right",
+            "segments": [
+                {
+                    "type": "git",
+                    "tips": [
+                        "git"
+                    ],
+                    "style": "powerline",
+                    "foreground": "#FFFFFF",
+                    "template": "<#aaaaaa>{{ .RepoName }}/</><b>{{ .HEAD }}</b>",
+                    "properties": {
+                        "branch_icon": ""
+                    }
+                }
+            ]
+        },
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "segments": [
+                {
+                    "type": "text",
+                    "style": "plain",
+                    "foreground": "#62ED8B",
+                    "template": "➜"
+                }
+            ],
+            "newline": true
+        }
+    ],
+    "tooltips": [
+        {
+            "type": "python",
+            "style": "powerline",
+            "tips": [
+                "python",
+                "pip"
+            ],
+            "template": "<#aaaaaa>python env:</><b><#62ED8B>({{ .Venv }})</></b>"
+        },
+        {
+            "type": "git",
+            "style": "powerline",
+            "tips": [
+                "git"
+            ],
+            "template": "<#aaaaaa>git:</><b>(upstream: <#62ED8B>+{{ .Ahead }}</><#aaaaaa>,</> <#E36464>-{{ .Behind }}</>)</b>",
+            "properties": {
+                "fetch_status": true
+            }
+        }
+    ]
+}
