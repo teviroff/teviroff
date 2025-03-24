@@ -34,8 +34,8 @@
                     "foreground": "#56B6C2",
                     "template": " {{ path .Path .Path }}",
                     "properties": {
-                        "style": "agnoster_short",
-                        "max_depth": 2,
+                        "style": "mixed",
+                        "mixed_threshold": 8,
                         "folder_separator_icon": "/",
                         "mapped_locations": {
                             "~/Documents/vscode": "[vscode]",
